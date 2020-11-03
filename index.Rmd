@@ -1,0 +1,46 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+<br>   
+![](./AmongUs.jpg)  
+
+## Among Us experimental design
+Gaming the game and examining design principles.
+
+#### Data
+```{r}
+#libraries
+library(tidyverse)
+
+#functions
+se <- function(x){
+  sd(x)/sqrt(length(x))
+}
+
+#data
+#game experiment dataframe 1: 1 imposter, changed number of players
+df <- read_csv("data/data.csv")
+
+#tally up
+data <- df %>% 
+  group_by(n_players, victors) %>% 
+  summarise(n = n())
+
+```
+
+
+#### Viz
+```{r}
+ggplot(data, aes(n_players, n, color = victors)) +
+  geom_point(size = 3) +
+  scale_x_continuous(breaks = c(5,6)) + 
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_color_brewer(palette = "Set1", direction = -1)
+
+```
+
