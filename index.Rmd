@@ -31,6 +31,8 @@ data <- df %>%
   group_by(n_players, victors) %>% 
   summarise(n = n())
 
+data
+
 ```
 
 

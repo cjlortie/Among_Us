@@ -396,7 +396,15 @@ df &lt;- read_csv(&quot;data/data.csv&quot;)
 #tally up
 data &lt;- df %&gt;% 
   group_by(n_players, victors) %&gt;% 
-  summarise(n = n())</code></pre>
+  summarise(n = n())
+
+data</code></pre>
+<pre><code>## # A tibble: 2 x 3
+## # Groups:   n_players [2]
+##   n_players victors       n
+##       &lt;dbl&gt; &lt;chr&gt;     &lt;int&gt;
+## 1         5 imposters     2
+## 2         6 crewmates     1</code></pre>
 </div>
 <div id="viz" class="section level4">
 <h4>Viz</h4>
