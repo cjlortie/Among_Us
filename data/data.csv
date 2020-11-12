@@ -2,3 +2,11 @@ rep,n_players,victors
 1,5,imposters
 2,5,imposters
 3,6,crewmates
+4,7,crewmates
+5,4,crewmates
+6,7,crewmates
+7,10,crewmates
+8,10,crewmates
+4,4,crewmates
+4,4,crewmates
+4,4,imposters
